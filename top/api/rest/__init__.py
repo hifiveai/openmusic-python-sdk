@@ -20,3 +20,6 @@ from top.api.rest.HifiveTrafficGroupRequest import HifiveTrafficGroupRequest
 from top.api.rest.HifiveTrafficTagRequest import HifiveTrafficTagRequest
 from top.api.rest.HifiveOrderTagRequest import HifiveOrderTagRequest
 from top.api.rest.HifiveOrderRefundRequest import HifiveOrderRefundRequest
+from top.api.rest.HifiveOrderDetailRequest import HifiveOrderDetailRequest
+from top.api.rest.HifiveOrderPublishRequest import HifiveOrderPublishRequest
+from top.api.rest.HifiveOrderMusicRequest import HifiveOrderMusicRequest

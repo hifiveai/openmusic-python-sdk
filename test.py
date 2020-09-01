@@ -223,8 +223,42 @@ def HifiveOrderRefundRequestTest(url, port,appkey, secret):
     resp = req.getResponse()
     return resp;
 
+def HifiveOrderDetailRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveOrderDetailRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.orderId= "1434556569145"
+    resp = req.getResponse()
+    return resp;
+
+def HifiveOrderPublishRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveOrderPublishRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.orderId= "1434556569145"
+    req.workId= "uEC00xeWbExGNilHpSN7MoM3AalWqwUp1"
+    resp = req.getResponse()
+    return resp;
+
+def HifiveOrderMusicRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveOrderMusicRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.orderId= "14345565691451"
+    req.workId= "uEC00xeWbExGNilHpSN7MoM3AalWqwUp1"
+    req.subject= "nYyple"
+    req.music= "[{\"versionId\":\"B7B810AABADF\",\"price\":20,\"num\":1}]"
+    req.totalFee ="1556"
+    req.deadline ="50"
+    req.language ="1"
+    req.audioFormat="mp3"
+    req.audioRate="320"
+
+    resp = req.getResponse()
+    return resp;
+
 try:
-    resp = HifiveOrderRefundRequestTest(url,port,appkey,secret)
+    resp = HifiveOrderMusicRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:

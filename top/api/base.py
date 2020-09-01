@@ -227,7 +227,7 @@ class RestApi(object):
     # Rest api的基类
     # ===========================================================================
 
-    def __init__(self, domain='gw.api.taobao.com', port=80):
+    def __init__(self, domain='gw.api.taobao.com', port=80,method="GET"):
         # =======================================================================
         # 初始化基类
         # Args @param domain: 请求的域名或者ip
@@ -235,7 +235,7 @@ class RestApi(object):
         # =======================================================================
         self.__domain = domain
         self.__port = port
-        self.__httpmethod = "POST"
+        self.__httpmethod = method
         if (top.getDefaultAppInfo()):
             self.__app_key = top.getDefaultAppInfo().appkey
             self.__secret = top.getDefaultAppInfo().secret
@@ -272,10 +272,11 @@ class RestApi(object):
     def _check_requst(self):
         pass
 
-    def getResponse(self, method='GET', timeout=30):
+    def getResponse(self,  timeout=30):
         # =======================================================================
         # 获取response结果
         # =======================================================================
+        method =self.__httpmethod
         sys_headers = {
             X_HF_Action: self.getapiname(),
             X_HF_Version: VERSION,
