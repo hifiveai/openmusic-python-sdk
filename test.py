@@ -257,8 +257,23 @@ def HifiveOrderMusicRequestTest(url, port,appkey, secret):
     resp = req.getResponse()
     return resp;
 
+
+def HifiveHQListenSliceRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveHQListenSliceRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.musicId = "B7B810AABADF"
+    req.audioFormat = "mp3"
+    req.audioRate = "128"
+
+    req.isMixed = "TRUE"
+    req.auditionBegin = "2"
+    req.auditionEnd = "100"
+    resp = req.getResponse()
+    return resp;
+
 try:
-    resp = HifiveOrderMusicRequestTest(url,port,appkey,secret)
+    resp = HifiveHQListenSliceRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:

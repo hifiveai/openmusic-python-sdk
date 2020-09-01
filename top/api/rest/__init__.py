@@ -23,3 +23,4 @@ from top.api.rest.HifiveOrderRefundRequest import HifiveOrderRefundRequest
 from top.api.rest.HifiveOrderDetailRequest import HifiveOrderDetailRequest
 from top.api.rest.HifiveOrderPublishRequest import HifiveOrderPublishRequest
 from top.api.rest.HifiveOrderMusicRequest import HifiveOrderMusicRequest
+from top.api.rest.HifiveHQListenSliceRequest import HifiveHQListenSliceRequest
