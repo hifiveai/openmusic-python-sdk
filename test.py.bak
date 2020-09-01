@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+'''
+Created on 2012-7-3
+
+@author: lihao
+'''
+import top.api
+
+
+appkey = '23571563'
+secret = 'def8bf03f76c2373b17f0698c5e80c9d'
+sessionkey = '6100210dd2cab1586a1a2d7c7a35c5b9102fbad0dab255f2270467557'
+url = "http://gw.api.taobao.com/router/rest"
+port = 80
+
+req = top.api.CainiaoWaybillIiSearchRequest(url, port)
+req.set_app_info(top.appinfo(appkey, secret))
+
+req.cp_code = "POSTB"
+try:
+    resp = req.getResponse(sessionkey)
+    print(resp)
+except Exception, e:
+    print(e)
