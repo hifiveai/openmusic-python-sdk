@@ -9,7 +9,7 @@ import top.api
 
 appkey = '5216d02806d5464b943492838b7e4390'
 secret = '2d241e8f934d47d5'
-token = '7e348a0da6c133d2c231099dff1c09bd'
+token = '5a9a8a7b7a6c34b6cabbbace77808b67'
 url = "https://hifive-openapi-qa.hifiveai.com"
 port = 80
 
@@ -405,8 +405,37 @@ def HifiveBaseFavoriteRequestTest(url, port,appkey, secret,token):
     return resp;
 
 
+def HifiveBehaviorRequestTest(url, port,appkey, secret,token):
+    req = top.api.HifiveBehaviorRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret,token))
+    req.clientId= "1223234343"
+    req.Action="1009"
+    req.TargetId="B75C80A41E3A"
+
+    resp = req.getResponse()
+    return resp;
+
+
+def HifiveUserGetRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveUserGetRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.nickname = "黄达"
+    req.gender = "1"
+    req.birthday = "202012121"
+    req.location = "30.779164,103.94547"
+    req.education = "2"
+    req.profession = "8"
+    req.isOrganization = "true"
+    req.favoriteSinger = "周杰伦"
+    req.favoriteGenre = "1"
+
+    resp = req.getResponse()
+    return resp;
+
+
 try:
-    resp = HifiveHotRequestTest(url,port,appkey,secret)
+    resp = HifiveBaseFavoriteRequestTest(url,port,appkey,secret,token)
     print(resp)
 
 except Exception as e:
