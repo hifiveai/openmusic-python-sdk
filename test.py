@@ -353,8 +353,20 @@ def HifiveSearchMusicRequestTest(url, port,appkey, secret):
     return resp;
 
 
+
+def HifiveMusicConfigRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveMusicConfigRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+
+
+    resp = req.getResponse()
+    return resp;
+
+
+
 try:
-    resp = HifiveSearchMusicRequestTest(url,port,appkey,secret)
+    resp = HifiveMusicConfigRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:

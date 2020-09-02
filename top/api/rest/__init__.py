@@ -31,4 +31,5 @@ from top.api.rest.HifiveSheetMusicRequest import HifiveSheetMusicRequest
 from top.api.rest.HifiveTagSheetRequest import HifiveTagSheetRequest
 from top.api.rest.HifiveSheetTagRequest import HifiveSheetTagRequest
 from top.api.rest.HifiveSearchMusicRequest import HifiveSearchMusicRequest
+from top.api.rest.HifiveMusicConfigRequest import HifiveMusicConfigRequest
 
