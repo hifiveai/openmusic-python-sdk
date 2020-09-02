@@ -309,8 +309,30 @@ def HifiveAuthorizationRequestTest(url, port,appkey, secret):
     resp = req.getResponse()
     return resp;
 
+def HifiveSheetMusicRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveSheetMusicRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.sheetId= "1203"
+
+
+    resp = req.getResponse()
+    return resp;
+
+
+def HifiveTagSheetRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveTagSheetRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.recoNum= "10"
+
+
+    resp = req.getResponse()
+    return resp;
+
+
 try:
-    resp = HifiveAuthorizationRequestTest(url,port,appkey,secret)
+    resp = HifiveTagSheetRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:

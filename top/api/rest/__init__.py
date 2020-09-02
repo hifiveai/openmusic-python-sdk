@@ -27,4 +27,6 @@ from top.api.rest.HifiveHQListenSliceRequest import HifiveHQListenSliceRequest
 from top.api.rest.HifiveChannelSheetRequest import HifiveChannelSheetRequest
 from top.api.rest.HifiveChannelRequest import HifiveChannelRequest
 from top.api.rest.HifiveAuthorizationRequest import HifiveAuthorizationRequest
+from top.api.rest.HifiveSheetMusicRequest import HifiveSheetMusicRequest
+from top.api.rest.HifiveTagSheetRequest import HifiveTagSheetRequest
 
