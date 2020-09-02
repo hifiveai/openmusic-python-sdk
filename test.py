@@ -330,9 +330,18 @@ def HifiveTagSheetRequestTest(url, port,appkey, secret):
     resp = req.getResponse()
     return resp;
 
+def HifiveSheetTagRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveSheetTagRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+
+
+    resp = req.getResponse()
+    return resp;
+
 
 try:
-    resp = HifiveTagSheetRequestTest(url,port,appkey,secret)
+    resp = HifiveSheetTagRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:
