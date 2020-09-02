@@ -340,8 +340,21 @@ def HifiveSheetTagRequestTest(url, port,appkey, secret):
     return resp;
 
 
+def HifiveSearchMusicRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveSearchMusicRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.price = "1-100000"
+    req.Page = "1"
+    req.PageSize = "20"
+
+
+    resp = req.getResponse()
+    return resp;
+
+
 try:
-    resp = HifiveSheetTagRequestTest(url,port,appkey,secret)
+    resp = HifiveSearchMusicRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:
