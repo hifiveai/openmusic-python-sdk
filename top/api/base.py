@@ -37,6 +37,7 @@ SYSTEM_GENERATE_VERSION = "taobao-sdk-python-20160830"
 X_HF_AppId = "X-HF-AppId"
 P_API = "method"
 X_HF_Action = "X-HF-Action"
+X_HF_Token = "X-HF-Token"
 X_HF_Version = "X-HF-Version"
 X_HF_Nonce = "X-HF-Nonce"
 X_HF_ClientId = "X-HF-ClientId"
@@ -87,7 +88,6 @@ def sign(accessKeySecret, parameters, sign_header, method):
         if k == 'clientId':
             continue
         canonicalizedQueryString += '&' + k + '=' + v
-
 
     stringToSign = canonicalizedQueryString[1:];
     if (len(stringToSign) == 0):
@@ -227,7 +227,7 @@ class RestApi(object):
     # Rest api的基类
     # ===========================================================================
 
-    def __init__(self, domain='gw.api.taobao.com', port=80,method="GET"):
+    def __init__(self, domain='gw.api.taobao.com', port=80, method="GET"):
         # =======================================================================
         # 初始化基类
         # Args @param domain: 请求的域名或者ip
@@ -236,9 +236,11 @@ class RestApi(object):
         self.__domain = domain
         self.__port = port
         self.__httpmethod = method
+        self.__token = None
         if (top.getDefaultAppInfo()):
             self.__app_key = top.getDefaultAppInfo().appkey
             self.__secret = top.getDefaultAppInfo().secret
+            self.__token = top.getDefaultAppInfo().token
 
     def get_request_header(self):
         return {};
@@ -251,6 +253,7 @@ class RestApi(object):
         # =======================================================================
         self.__app_key = appinfo.appkey
         self.__secret = appinfo.secret
+        self.__token = appinfo.token
 
     def getapiname(self):
         return ""
@@ -272,11 +275,11 @@ class RestApi(object):
     def _check_requst(self):
         pass
 
-    def getResponse(self,  timeout=30):
+    def getResponse(self, timeout=30):
         # =======================================================================
         # 获取response结果
         # =======================================================================
-        method =self.__httpmethod
+        method = self.__httpmethod
         sys_headers = {
             X_HF_Action: self.getapiname(),
             X_HF_Version: VERSION,
@@ -302,8 +305,11 @@ class RestApi(object):
         ##计算签名
         # sys_headers[P_SIGN] = sign_header[AUTHORIZATION]+" "+"Signature="+signature)
         sys_headers[AUTHORIZATION] = sign_header[AUTHORIZATION] + " " + "Signature=" + signature
+        if self.__token is not None:
+            sys_headers[X_HF_Token] = self.__token
         ## 下面开始请求
         header.update(sys_headers)
+
         del application_parameter["clientId"]
         sys_parameters.update(application_parameter)
         data = sys_parameters
@@ -327,8 +333,8 @@ class RestApi(object):
     def getApplicationParameters(self):
         application_parameter = {}
         for key, value in self.__dict__.items():
-            if not key.startswith("__") and not key in self.getMultipartParas() and not key.startswith(
-                    "_RestApi__") and value is not None:
+            if not key.startswith("__")  and not key in self.getMultipartParas() and not key.startswith(
+                "_RestApi__") and value is not None:
                 if (key.startswith("_")):
                     application_parameter[key[1:]] = value
                 else:

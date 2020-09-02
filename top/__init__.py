@@ -8,16 +8,17 @@ from top.api.base import sign
 
 
 class appinfo(object):
-    def __init__(self,appkey,secret):
+    def __init__(self,appkey,secret,token=None):
         self.appkey = appkey
         self.secret = secret
+        self.token = token
         
 def getDefaultAppInfo():
     pass
 
      
-def setDefaultAppInfo(appkey,secret):
-    default = appinfo(appkey,secret)
+def setDefaultAppInfo(appkey,secret,token=None):
+    default = appinfo(appkey,secret,token)
     global getDefaultAppInfo 
     getDefaultAppInfo = lambda: default
     

@@ -32,4 +32,8 @@ from top.api.rest.HifiveTagSheetRequest import HifiveTagSheetRequest
 from top.api.rest.HifiveSheetTagRequest import HifiveSheetTagRequest
 from top.api.rest.HifiveSearchMusicRequest import HifiveSearchMusicRequest
 from top.api.rest.HifiveMusicConfigRequest import HifiveMusicConfigRequest
+from top.api.rest.HifiveBaseWeatherRequest import HifiveBaseWeatherRequest
+from top.api.rest.HifiveBaseVisualRequest import HifiveBaseVisualRequest
+from top.api.rest.HifiveBaseFavoriteRequest import HifiveBaseFavoriteRequest
+from top.api.rest.HifiveHotRequest import HifiveHotRequest
 

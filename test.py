@@ -9,7 +9,7 @@ import top.api
 
 appkey = '5216d02806d5464b943492838b7e4390'
 secret = '2d241e8f934d47d5'
-sessionkey = '6100210dd2cab1586a1a2d7c7a35c5b9102fbad0dab255f2270467557'
+token = '7e348a0da6c133d2c231099dff1c09bd'
 url = "https://hifive-openapi-qa.hifiveai.com"
 port = 80
 
@@ -364,9 +364,49 @@ def HifiveMusicConfigRequestTest(url, port,appkey, secret):
     return resp;
 
 
+def HifiveBaseWeatherRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveBaseWeatherRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.location= "30.779164,103.94547"
+
+    resp = req.getResponse()
+    return resp;
+
+
+def HifiveBaseVisualRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveBaseVisualRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.location= "30.779164,103.94547"
+
+    resp = req.getResponse()
+    return resp;
+
+def HifiveHotRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveHotRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.Duration= "183"
+    req.StartTime= "1594639058"
+    req.Page= "1"
+    req.PageSize= "20"
+    resp = req.getResponse()
+    return resp;
+
+def HifiveBaseFavoriteRequestTest(url, port,appkey, secret,token):
+    req = top.api.HifiveBaseFavoriteRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret,token))
+    req.clientId= "1223234343"
+    req.page="1"
+    req.pageSize="20"
+
+    resp = req.getResponse()
+    return resp;
+
 
 try:
-    resp = HifiveMusicConfigRequestTest(url,port,appkey,secret)
+    resp = HifiveHotRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:
