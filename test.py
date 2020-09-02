@@ -272,8 +272,45 @@ def HifiveHQListenSliceRequestTest(url, port,appkey, secret):
     resp = req.getResponse()
     return resp;
 
+def HifiveChannelSheetRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveChannelSheetRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.groupId = "csa0t86qv24"
+    req.recoNum = "10"
+    req.language = "1"
+
+    req.Page = "1"
+    req.PageSize = "10"
+
+    resp = req.getResponse()
+    return resp;
+
+
+def HifiveChannelRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveChannelRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+
+    resp = req.getResponse()
+    return resp;
+
+def HifiveAuthorizationRequestTest(url, port,appkey, secret):
+    req = top.api.HifiveAuthorizationRequest(url, port)
+    req.set_app_info(top.appinfo(appkey, secret))
+    req.clientId= "1223234343"
+    req.companyName= "嗨翻屋d1g"
+    req.projectName= "小嗨nbdb"
+    req.brand= "HIFIVE音乐开放平台"
+    req.period= "3"
+    req.area= "2"
+    req.orderIds= "14345565691451"
+
+    resp = req.getResponse()
+    return resp;
+
 try:
-    resp = HifiveHQListenSliceRequestTest(url,port,appkey,secret)
+    resp = HifiveAuthorizationRequestTest(url,port,appkey,secret)
     print(resp)
 
 except Exception as e:
