@@ -5,6 +5,7 @@ Created on 2012-7-3
 @author: lihao
 '''
 import top.api
+from top.api import HifiveBitRateEnum
 
 appkey = '5216d02806d5464b943492838b7e4390'
 secret = '2d241e8f934d47d5'
@@ -18,8 +19,8 @@ def hifiveHQListenRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
@@ -29,8 +30,8 @@ def hifiveTrafficDownloadRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
@@ -67,8 +68,8 @@ def hifiveTrafficListenMixedRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
@@ -78,8 +79,8 @@ def hifiveOrderListenMixedRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
@@ -89,8 +90,8 @@ def hifiveTrafficListenSliceRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
 
     req.isMixed = "TRUE"
     req.auditionBegin = "2"
@@ -104,8 +105,8 @@ def hifiveOrderListenSliceRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
 
     req.isMixed = "TRUE"
     req.auditionBegin = "2"
@@ -119,8 +120,8 @@ def hifiveTrafficListenRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
@@ -130,8 +131,8 @@ def hifiveOrderListenRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
@@ -271,8 +272,8 @@ def hifiveOrderMusicRequestTest(url, port, appkey, secret):
     req.totalFee = "1556"
     req.deadline = "50"
     req.language = "1"
-    req.audioFormat = "mp3"
-    req.audioRate = "320"
+    req.audioFormat = HifiveBitRateEnum.AAC_320.value[0]
+    req.audioRate = HifiveBitRateEnum.AAC_320.value[1]
 
     resp = req.getResponse()
     return resp;
@@ -283,8 +284,8 @@ def hifiveHQListenSliceRequestTest(url, port, appkey, secret):
     req.set_app_info(top.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = "mp3"
-    req.audioRate = "128"
+    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
+    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
 
     req.isMixed = "TRUE"
     req.auditionBegin = "2"
@@ -455,7 +456,7 @@ def hifiveUserGetRequestTest(url, port, appkey, secret):
 
 
 try:
-    resp = hifiveUserGetRequestTest(url, port, appkey, secret)
+    resp = hifiveAuthorizationRequestTest(url, port, appkey, secret)
     print(resp)
 
 except Exception as e:

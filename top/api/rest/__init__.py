@@ -38,4 +38,6 @@ from top.api.rest.HifiveBaseFavoriteRequest import HifiveBaseFavoriteRequest
 from top.api.rest.HifiveHotRequest import HifiveHotRequest
 from top.api.rest.HifiveBehaviorRequest import HifiveBehaviorRequest
 from top.api.rest.HifiveUserGetRequest import HifiveUserGetRequest
+from top.api.rest.HifiveBitRateEnum import HifiveBitRateEnum
+
 

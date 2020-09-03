@@ -2,7 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.7 virtualenv at D:\taobao\hifive-openapi-python-sdk\venv" />
+      <configuration sdkName="Python 3.7" />
     </facet>
   </component>
   <component name="NewModuleRootManager">
@@ -11,6 +11,5 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 2.7 (hifive-openapi-python-sdk) (1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.7 virtualenv at D:\taobao\hifive-openapi-python-sdk\venv interpreter library" level="application" />
   </component>
 </module>
