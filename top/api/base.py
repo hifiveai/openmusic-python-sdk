@@ -9,25 +9,23 @@ try:
     import httplib
 except ImportError:
     import http.client as httplib
-import urllib.parse
-import time
 import hashlib
-import json
 import top
-import itertools
-import mimetypes
-import datetime
 import requests
 import random
-import string
 import itertools
 import mimetypes
 import base64
 import hmac
-import uuid
 import time
 import sys
 from hashlib import sha1
+
+if sys.version.startswith("2"):
+    from urllib import quote
+else:
+    from urllib.parse import quote
+
 
 '''
 定义一些系统变量
@@ -78,8 +76,8 @@ def sign(accessKeySecret, parameters, sign_header, method):
              + ' ' + sign_header[X_HF_NONCE] \
              + ' ' + sign_header[X_HF_CLIENT_ID] \
              + ' ' + sign_header[AUTHORIZATION] \
-             + ' ' + sign_header[X_HF_TIMESTAMP] \
-        ;
+             + ' ' + sign_header[X_HF_TIMESTAMP]
+
     headersBase64 = base64.b64encode(heards.encode()).decode()
 
     sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
@@ -89,11 +87,11 @@ def sign(accessKeySecret, parameters, sign_header, method):
             continue
         canonicalizedQueryString += '&' + k + '=' + v
 
-    stringToSign = canonicalizedQueryString[1:];
+    stringToSign = canonicalizedQueryString[1:]
     if (len(stringToSign) == 0):
-        stringToSign = headersBase64;
+        stringToSign = headersBase64
     else:
-        stringToSign = stringToSign + "&" + headersBase64;
+        stringToSign = stringToSign + "&" + headersBase64
     stringToSignBase64 = base64.b64encode(stringToSign.encode()).decode()
     h = hmac.new(accessKeySecret.encode(), stringToSignBase64.encode(), sha1).digest()
 
@@ -105,7 +103,7 @@ def sign(accessKeySecret, parameters, sign_header, method):
 
 def percent_encode(encodeStr):
     encodeStr = str(encodeStr)
-    res = urllib.parse.quote(encodeStr.encode('utf-8').decode(sys.stdin.encoding), '')
+    res = quote(encodeStr.encode('utf-8').decode(sys.stdin.encoding), '')
     res = res.replace('+', '%20')
     res = res.replace('*', '%2A')
     res = res.replace('%7E', '~')
@@ -115,8 +113,6 @@ def percent_encode(encodeStr):
 def mixStr(pstr):
     if (isinstance(pstr, str)):
         return pstr
-
-
     else:
         return str(pstr)
 
@@ -175,9 +171,8 @@ class MultiPartForm(object):
         # Add the files to upload
         parts.extend(
             [part_boundary,
-             'Content-Disposition: file; name="%s"; filename="%s"' % \
-             (field_name, filename),
-             'Content-Type: %s' % content_type,
+             'Content-Disposition: file; name="{0}"; filename="{1}"'.format(field_name, filename),
+             'Content-Type: {0}'.format(content_type),
              'Content-Transfer-Encoding: binary',
              '',
              body,
@@ -227,7 +222,7 @@ class RestApi(object):
     # Rest api的基类
     # ===========================================================================
 
-    def __init__(self, domain='gw.api.taobao.com', port=80, method="GET"):
+    def __init__(self, domain='gw.api.taobao.com', port=80, method=None):
         # =======================================================================
         # 初始化基类
         # Args @param domain: 请求的域名或者ip
@@ -235,7 +230,7 @@ class RestApi(object):
         # =======================================================================
         self.__domain = domain
         self.__port = port
-        self.__httpmethod = method
+        self.__httpmethod = method or "GET"
         self.__token = None
         if (top.getDefaultAppInfo()):
             self.__app_key = top.getDefaultAppInfo().appkey
@@ -243,7 +238,7 @@ class RestApi(object):
             self.__token = top.getDefaultAppInfo().token
 
     def get_request_header(self):
-        return {};
+        return {}
 
     def set_app_info(self, appinfo):
         # =======================================================================
@@ -264,13 +259,13 @@ class RestApi(object):
              'e', 'd', 'c', 'b', 'a', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], 32))
 
     def getTimestamp(self):
-        return str(int(round(time.time() * 1000)));
+        return str(int(round(time.time() * 1000)))
 
     def getMultipartParas(self):
-        return [];
+        return []
 
     def getTranslateParas(self):
-        return {};
+        return {}
 
     def _check_requst(self):
         pass
@@ -279,7 +274,7 @@ class RestApi(object):
         # =======================================================================
         # 获取response结果
         # =======================================================================
-        method = self.__httpmethod
+        method = self.__httpmethod.upper()
         sys_headers = {
             X_HF_ACTION: self.getapiname(),
             X_HF_VERSION: VERSION,
@@ -294,7 +289,7 @@ class RestApi(object):
         }
 
         application_parameter = self.getApplicationParameters()
-        header = self.get_request_header();
+        header = self.get_request_header()
 
         sign_parameter = sys_parameters.copy()
         sign_parameter.update(application_parameter)
@@ -302,12 +297,13 @@ class RestApi(object):
         sign_header = sys_headers.copy()
         sign_header.update(sign_header)
         signature = sign(self.__secret, sign_parameter, sign_header, method)
-        ##计算签名
+
+        # 计算签名
         # sys_headers[P_SIGN] = sign_header[AUTHORIZATION]+" "+"Signature="+signature)
         sys_headers[AUTHORIZATION] = sign_header[AUTHORIZATION] + " " + "Signature=" + signature
         if self.__token is not None:
             sys_headers[X_HF_Token] = self.__token
-        ## 下面开始请求
+        # 下面开始请求
         header.update(sys_headers)
 
         del application_parameter["clientId"]
@@ -324,16 +320,17 @@ class RestApi(object):
             return requests.post(self.__domain, files=files, data=sys_parameters).json()
 
         if (method == 'GET'):
-            req = requests.get(self.__domain, data, headers=header)
+            resp = requests.get(self.__domain, data, headers=header, timeout=timeout)
         else:
-            req = requests.post(self.__domain, data, headers=header)
-
-        return req.json()
+            resp = requests.post(self.__domain, data, headers=header, timeout=timeout)
+        if not resp:
+            raise RequestException("connection error,response code:{0}.".format(resp.status_code))
+        return resp.json()
 
     def getApplicationParameters(self):
         application_parameter = {}
         for key, value in self.__dict__.items():
-            if not key.startswith("__") and not key in self.getMultipartParas() and not key.startswith(
+            if not key.startswith("__") and key not in self.getMultipartParas() and not key.startswith(
                     "_RestApi__") and value is not None:
                 if (key.startswith("_")):
                     application_parameter[key[1:]] = value

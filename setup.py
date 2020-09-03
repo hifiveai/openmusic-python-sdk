@@ -4,56 +4,25 @@ from setuptools import setup, find_packages
 version = '0.3.7'
 
 setup(
-    name='openapi_sdk',
+    name='hifive_openapi',
     version=version,
-    description="淘宝平台消息服务客户端 for Python",
+    description="HIFIVE OpenApi Python SDK",
     long_description="""
-tmcpy
+openapi_sdk
 =======================
 
-淘宝平台消息服务python版本
-
-Usage:
-```python
-import logging
-
-from tmcpy import TmcClient
-
-logging.basicConfig(level=logging.DEBUG)
-
-tmc = TmcClient('ws://mc.api.tbsandbox.com/', 'appkey', 'appsecret', 'default',
-    query_message_interval=50)
-
-
-def print1():
-    print 'on_open'
-
-
-tmc.on("open", print1)
-try:
-    ioloop.IOLoop.instance().start()
-except KeyboardInterrupt:
-    pass
-finally:
-    tmc.close()
-```
+HIFIVE OpenApi for Python.
 
 """,
-    keywords='openapi tmc python',
+    keywords='hifiveopen_api',
     author='yong.huang',
     author_email='huangyong@hifive.ai',
-    url='https://gitlab.ilongyuan.cn/hifive/hifive-openapi-python-sdk.git',
+    url='https://gitlab.ilongyuan.cn/hifive/hifive-openapi-python-sdk',
     license='MIT',
-    packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
-    include_package_data=True,
-    zip_safe=False,
+    packages=find_packages(),
     install_requires=[
-        'tornado>=4.1',
-        'six>=1.8.0',
-        'simplejson>=3.5.2'
+        'requests >= 2.24.0',
+
     ],
-    tests_require=[
-        'nose',
-    ],
-    test_suite='nose.collector'
+
 )

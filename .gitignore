@@ -56,3 +56,7 @@ docs/_build/
 
 # PyCharm
 .idea/
+__MACOSX
+.venv
+.env
+.DS_Store
