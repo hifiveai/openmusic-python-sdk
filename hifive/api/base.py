@@ -10,7 +10,7 @@ try:
 except ImportError:
     import http.client as httplib
 import hashlib
-import top
+import hifive
 import requests
 import random
 import itertools
@@ -232,10 +232,10 @@ class RestApi(object):
         self.__port = port
         self.__httpmethod = method or "GET"
         self.__token = None
-        if (top.getDefaultAppInfo()):
-            self.__app_key = top.getDefaultAppInfo().appkey
-            self.__secret = top.getDefaultAppInfo().secret
-            self.__token = top.getDefaultAppInfo().token
+        if (hifive.getDefaultAppInfo()):
+            self.__app_key = hifive.getDefaultAppInfo().appkey
+            self.__secret = hifive.getDefaultAppInfo().secret
+            self.__token = hifive.getDefaultAppInfo().token
 
     def get_request_header(self):
         return {}

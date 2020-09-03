@@ -1,7 +1,7 @@
 '''
 Created by yong.huang on 2016.11.04
 '''
-from top.api.base import RestApi
+from hifive.api.base import RestApi
 
 
 class HifiveUserGetRequest(RestApi):
