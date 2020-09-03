@@ -8,6 +8,6 @@ from enum import Enum
 
 
 class GenderEnum(Enum):
-    UNKNOWN = 0  # 人妖
-    MAN = 1  # 男性
-    WOMAN = 2  # 女性
+    UNKNOWN = "0"  # 人妖
+    MAN = "1"  # 男性
+    WOMAN = "2"  # 女性

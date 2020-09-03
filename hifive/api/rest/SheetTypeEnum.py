@@ -9,6 +9,6 @@ from enum import Enum
 
 class SheetTypeEnum(Enum):
     # 系统歌单
-    SYS = 0
+    SYS = "0"
     # 自定义歌单
-    CUSTOM = 1
+    CUSTOM = "1"

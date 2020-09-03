@@ -5,7 +5,7 @@ Created on 2012-7-3
 @author: lihao
 '''
 import hifive.api
-from hifive.api import HifiveBitRateEnum
+from hifive.api import HifiveBitRateEnum, GenderEnum, EducationEnum
 from hifive.api.rest import AreaEnum, PeriodEnum
 
 appkey = '5216d02806d5464b943492838b7e4390'
@@ -443,10 +443,10 @@ def hifiveUserGetRequestTest(url, port, appkey, secret):
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.nickname = "黄达"
-    req.gender = "1"
+    req.gender = GenderEnum.MAN.value
     req.birthday = "202012121"
     req.location = "30.779164,103.94547"
-    req.education = "2"
+    req.education = EducationEnum.MASTER.value
     req.profession = "8"
     req.isOrganization = "true"
     req.favoriteSinger = "周杰伦"
@@ -457,7 +457,7 @@ def hifiveUserGetRequestTest(url, port, appkey, secret):
 
 
 try:
-    resp = hifiveAuthorizationRequestTest(url, port, appkey, secret)
+    resp = hifiveUserGetRequestTest(url, port, appkey, secret)
     print(resp)
 
 except Exception as e:
