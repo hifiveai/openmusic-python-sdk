@@ -1,7 +1,7 @@
 # coding: utf-8
 from setuptools import setup, find_packages
 
-version = '0.3.7'
+version = '4.0.1'
 
 setup(
     name='hifive_openapi',

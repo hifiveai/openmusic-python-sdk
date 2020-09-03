@@ -457,7 +457,7 @@ def hifiveUserGetRequestTest(url, port, appkey, secret):
 
 
 try:
-    resp = hifiveUserGetRequestTest(url, port, appkey, secret)
+    resp = hifiveBaseWeatherRequestTest(url, port, appkey, secret)
     print(resp)
 
 except Exception as e:
