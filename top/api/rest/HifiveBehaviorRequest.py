@@ -5,7 +5,8 @@ from top.api.base import RestApi
 
 
 class HifiveBehaviorRequest(RestApi):
-    def __init__(self, domain='hifive-gateway-test.hifiveai.com', port=80,method="POST"):
+    def __init__(self, domain=None, port=80,method="POST"):
+        domain = domain or 'hifive-gateway-test.hifiveai.com';
         RestApi.__init__(self, domain, port,method)
         self.clientId = None
         self.TargetId = None

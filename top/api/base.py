@@ -34,15 +34,15 @@ from hashlib import sha1
 '''
 SYSTEM_GENERATE_VERSION = "taobao-sdk-python-20160830"
 
-X_HF_AppId = "X-HF-AppId"
+X_HF_APPID = "X-HF-AppId"
 P_API = "method"
-X_HF_Action = "X-HF-Action"
+X_HF_ACTION = "X-HF-Action"
 X_HF_Token = "X-HF-Token"
-X_HF_Version = "X-HF-Version"
-X_HF_Nonce = "X-HF-Nonce"
-X_HF_ClientId = "X-HF-ClientId"
+X_HF_VERSION = "X-HF-Version"
+X_HF_NONCE = "X-HF-Nonce"
+X_HF_CLIENT_ID = "X-HF-ClientId"
 AUTHORIZATION = "Authorization"
-X_HF_Timestamp = "X-HF-Timestamp"
+X_HF_TIMESTAMP = "X-HF-Timestamp"
 HMAC_SHA1 = "HF3-HMAC-SHA1"
 SIGNATURE = "Signature"
 VERSION = "V4.0.1"
@@ -72,13 +72,13 @@ def sign(accessKeySecret, parameters, sign_header, method):
     # ===========================================================================
     # 如果parameters 是字典类的话
     heards = method \
-             + ' ' + sign_header['X-HF-Action'] \
-             + ' ' + sign_header['X-HF-Version'] \
-             + ' ' + sign_header['X-HF-AppId'] \
-             + ' ' + sign_header['X-HF-Nonce'] \
-             + ' ' + sign_header['X-HF-ClientId'] \
-             + ' ' + sign_header['Authorization'] \
-             + ' ' + sign_header['X-HF-Timestamp'] \
+             + ' ' + sign_header[X_HF_ACTION] \
+             + ' ' + sign_header[X_HF_VERSION] \
+             + ' ' + sign_header[X_HF_APPID] \
+             + ' ' + sign_header[X_HF_NONCE] \
+             + ' ' + sign_header[X_HF_CLIENT_ID] \
+             + ' ' + sign_header[AUTHORIZATION] \
+             + ' ' + sign_header[X_HF_TIMESTAMP] \
         ;
     headersBase64 = base64.b64encode(heards.encode()).decode()
 
@@ -281,13 +281,13 @@ class RestApi(object):
         # =======================================================================
         method = self.__httpmethod
         sys_headers = {
-            X_HF_Action: self.getapiname(),
-            X_HF_Version: VERSION,
-            X_HF_AppId: self.__app_key,
-            X_HF_Nonce: self.getNonce(),
-            X_HF_ClientId: self.__dict__["clientId"],
+            X_HF_ACTION: self.getapiname(),
+            X_HF_VERSION: VERSION,
+            X_HF_APPID: self.__app_key,
+            X_HF_NONCE: self.getNonce(),
+            X_HF_CLIENT_ID: self.__dict__["clientId"],
             AUTHORIZATION: HMAC_SHA1,
-            X_HF_Timestamp: self.getTimestamp(),
+            X_HF_TIMESTAMP: self.getTimestamp(),
         }
 
         sys_parameters = {
@@ -333,8 +333,8 @@ class RestApi(object):
     def getApplicationParameters(self):
         application_parameter = {}
         for key, value in self.__dict__.items():
-            if not key.startswith("__")  and not key in self.getMultipartParas() and not key.startswith(
-                "_RestApi__") and value is not None:
+            if not key.startswith("__") and not key in self.getMultipartParas() and not key.startswith(
+                    "_RestApi__") and value is not None:
                 if (key.startswith("_")):
                     application_parameter[key[1:]] = value
                 else:

@@ -5,8 +5,10 @@ from top.api.base import RestApi
 
 
 class HifiveOrderPublishRequest(RestApi):
-    def __init__(self, domain='hifive-gateway-test.hifiveai.com', port=80,method="POST"):
-        RestApi.__init__(self, domain, port,method)
+    def __init__(self, domain=None, port=80, method=None):
+        domain = domain or 'hifive-gateway-test.hifiveai.com';
+        method = method or 'POST';
+        RestApi.__init__(self, domain, port, method)
         self.clientId = None
         self.orderId = None
         self.workId = None

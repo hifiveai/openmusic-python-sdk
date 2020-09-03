@@ -5,7 +5,8 @@ from top.api.base import RestApi
 
 
 class HifiveOrderRefundRequest(RestApi):
-    def __init__(self, domain='hifive-gateway-test.hifiveai.com', port=80):
+    def __init__(self, domain=None, port=80):
+        domain = domain or 'hifive-gateway-test.hifiveai.com';
         RestApi.__init__(self, domain, port)
         self.clientId = None
         self.orderId = None
