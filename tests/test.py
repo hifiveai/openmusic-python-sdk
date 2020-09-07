@@ -367,7 +367,8 @@ def hifiveSearchMusicRequestTest(url, port, appkey, secret):
     req = hifive.api.HifiveSearchMusicRequest(url, port)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-    req.price = "1-100000"
+    req.priceFromCent = "1"
+    req.priceToCent = "100000"
     req.Page = "1"
     req.PageSize = "20"
 
@@ -457,7 +458,7 @@ def hifiveUserGetRequestTest(url, port, appkey, secret):
 
 
 try:
-    resp = hifiveBaseWeatherRequestTest(url, port, appkey, secret)
+    resp = hifiveSearchMusicRequestTest(url, port, appkey, secret)
     print(resp)
 
 except Exception as e:

@@ -12,7 +12,12 @@ class HifiveSearchMusicRequest(RestApi):
         self.clientId = None
         self.keyword = None
         self.language = None
-        self.price = None
+        self.priceToCent = None
+        self.priceFromCent = None
+        self.bpmTo = None
+        self.bpmFrom = None
+        self.durationTo = None
+        self.durationFrom = None
         self.tagId = None
         self.bpm = None
         self.duration = None
