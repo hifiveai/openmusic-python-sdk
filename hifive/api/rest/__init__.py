@@ -44,6 +44,7 @@ from hifive.api.rest.PeriodEnum import PeriodEnum
 from hifive.api.rest.SheetTypeEnum import SheetTypeEnum
 from hifive.api.rest.GenderEnum import GenderEnum
 from hifive.api.rest.EducationEnum import EducationEnum
+from hifive.api.rest.HifiveOrderTagMusicRequest import HifiveOrderTagMusicRequest
 
 
 

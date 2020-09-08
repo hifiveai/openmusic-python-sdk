@@ -45,6 +45,14 @@ def hifiveTrafficTagMusicRequestTest(url, port, appkey, secret):
     resp = req.getResponse()
     return resp;
 
+def hifiveOrderTagMusicRequestTest(url, port, appkey, secret):
+    req = hifive.api.HifiveOrderTagMusicRequest(url, port)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "1223234343"
+    req.tagId = "5440"
+    resp = req.getResponse()
+    return resp;
+
 
 def hifiveTrafficSearchMusicRequestTest(url, port, appkey, secret):
     req = hifive.api.HifiveTrafficSearchMusicRequest(url, port)
