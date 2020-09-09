@@ -324,6 +324,7 @@ def hifiveChannelRequestTest(url, port, appkey, secret):
     req.clientId = "1223234343"
 
     resp = req.getResponse()
+    print(resp)
     return resp;
 
 
@@ -349,6 +350,7 @@ def hifiveSheetMusicRequestTest(url, port, appkey, secret):
     req.sheetId = "1203"
 
     resp = req.getResponse()
+    print(resp)
     return resp;
 
 
@@ -359,6 +361,7 @@ def hifiveTagSheetRequestTest(url, port, appkey, secret):
     req.recoNum = "10"
 
     resp = req.getResponse()
+    print(resp)
     return resp;
 
 

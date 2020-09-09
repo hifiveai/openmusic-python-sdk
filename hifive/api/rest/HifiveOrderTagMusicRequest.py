@@ -15,4 +15,4 @@ class HifiveOrderTagMusicRequest(RestApi):
         self.PageSize = None
 
     def getapiname(self):
-        return 'TrafficTagMusic'
+        return 'OrderTagMusic'
