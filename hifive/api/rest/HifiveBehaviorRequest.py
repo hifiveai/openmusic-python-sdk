@@ -11,6 +11,8 @@ class HifiveBehaviorRequest(RestApi):
         self.clientId = None
         self.TargetId = None
         self.Action = None
+        self.Location = None
+        self.context = None
 
 
 
