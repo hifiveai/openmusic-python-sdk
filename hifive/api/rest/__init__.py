@@ -26,7 +26,7 @@ from hifive.api.rest.HifiveOrderMusicRequest import HifiveOrderMusicRequest
 from hifive.api.rest.HifiveHQListenSliceRequest import HifiveHQListenSliceRequest
 from hifive.api.rest.HifiveChannelSheetRequest import HifiveChannelSheetRequest
 from hifive.api.rest.HifiveChannelRequest import HifiveChannelRequest
-from hifive.api.rest.HifiveAuthorizationRequest import HifiveAuthorizationRequest
+from hifive.api.rest.HifiveOrderAuthorizationRequest import HifiveOrderAuthorizationRequest
 from hifive.api.rest.HifiveSheetMusicRequest import HifiveSheetMusicRequest
 from hifive.api.rest.HifiveTagSheetRequest import HifiveTagSheetRequest
 from hifive.api.rest.HifiveSheetTagRequest import HifiveSheetTagRequest

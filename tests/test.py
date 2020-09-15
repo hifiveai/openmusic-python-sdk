@@ -328,8 +328,8 @@ def hifiveChannelRequestTest(url, appkey, secret):
     return resp;
 
 
-def hifiveAuthorizationRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveAuthorizationRequest(url)
+def HifiveOrderAuthorizationRequestTest(url, appkey, secret):
+    req = hifive.api.HifiveOrderAuthorizationRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.companyName = "嗨翻屋d1g"
