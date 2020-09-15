@@ -36,8 +36,8 @@ from hifive.api.rest.HifiveBaseWeatherRequest import HifiveBaseWeatherRequest
 from hifive.api.rest.HifiveBaseVisualRequest import HifiveBaseVisualRequest
 from hifive.api.rest.HifiveBaseFavoriteRequest import HifiveBaseFavoriteRequest
 from hifive.api.rest.HifiveHotRequest import HifiveHotRequest
-from hifive.api.rest.HifiveBehaviorRequest import HifiveBehaviorRequest
-from hifive.api.rest.HifiveUserGetRequest import HifiveUserGetRequest
+from hifive.api.rest.HifiveBaseReportRequest import HifiveBaseReportRequest
+from hifive.api.rest.HifiveBaseLoginRequest import HifiveBaseLoginRequest
 from hifive.api.rest.HifiveBitRateEnum import HifiveBitRateEnum
 from hifive.api.rest.AreaEnum import AreaEnum
 from hifive.api.rest.PeriodEnum import PeriodEnum
