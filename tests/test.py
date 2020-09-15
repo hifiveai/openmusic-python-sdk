@@ -420,10 +420,10 @@ def hifiveHotRequestTest(url, appkey, secret):
     req = hifive.api.HifiveBaseHotRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-    req.Duration = "183"
-    req.StartTime = "1594639058"
-    req.Page = "1"
-    req.PageSize = "20"
+    req.duration = "183"
+    req.startTime = "1594639058"
+    req.page = "1"
+    req.pageSize = "20"
     resp = req.getResponse()
     return resp;
 
