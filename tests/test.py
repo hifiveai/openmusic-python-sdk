@@ -443,8 +443,8 @@ def hifiveBaseReportRequestTest(url, appkey, secret, token):
     req = hifive.api.HifiveBaseReportRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret, token))
     req.clientId = "1223234343"
-    req.Action = "1009"
-    req.TargetId = "B75C80A41E3A"
+    req.action = "1009"
+    req.targetId = "B75C80A41E3A"
 
     resp = req.getResponse()
     return resp;

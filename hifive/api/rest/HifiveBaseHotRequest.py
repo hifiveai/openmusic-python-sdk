@@ -9,11 +9,11 @@ class HifiveBaseHotRequest(RestApi):
         domain = domain or 'hifive-gateway-test.hifiveai.com';
         RestApi.__init__(self, domain, port)
         self.clientId = None
-        self.StartTime = None
+        self.startTime = None
 
-        self.Duration = None
-        self.Page = None
-        self.PageSize = None
+        self.duration = None
+        self.page = None
+        self.pageSize = None
 
 
 

@@ -12,8 +12,8 @@ class HifiveTrafficGroupSheetRequest(RestApi):
         self.groupId = None
         self.recoNum = None
         self.language = None
-        self.Page = None
-        self.PageSize = None
+        self.page = None
+        self.pageSize = None
 
     def getapiname(self):
         return 'TrafficGroupSheet'

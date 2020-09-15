@@ -7,8 +7,8 @@ class HifiveBaseFavoriteRequest(RestApi):
 		domain = domain or 'hifive-gateway-test.hifiveai.com';
 		RestApi.__init__(self,domain, port)
 		self.clientId = None
-		self.Page = None
-		self.PageSize = None
+		self.page = None
+		self.pageSize = None
 
 	def getapiname(self):
 		return 'BaseFavorite'

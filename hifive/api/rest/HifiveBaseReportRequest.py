@@ -9,8 +9,8 @@ class HifiveBaseReportRequest(RestApi):
         domain = domain or 'hifive-gateway-test.hifiveai.com';
         RestApi.__init__(self, domain, port,method)
         self.clientId = None
-        self.TargetId = None
-        self.Action = None
+        self.targetId = None
+        self.action = None
         self.Location = None
         self.context = None
 

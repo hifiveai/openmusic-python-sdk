@@ -11,8 +11,8 @@ class HifiveOrderTagMusicRequest(RestApi):
         self.clientId = None
         self.language = None
         self.tagId = None
-        self.Page = None
-        self.PageSize = None
+        self.page = None
+        self.pageSize = None
 
     def getapiname(self):
         return 'OrderTagMusic'

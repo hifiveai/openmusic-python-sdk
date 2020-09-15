@@ -9,8 +9,8 @@ class HifiveSheetMusicRequest(RestApi):
 		self.clientId = None
 		self.sheetId = None
 		self.language = None
-		self.Page = None
-		self.PageSize = None
+		self.page = None
+		self.pageSize = None
 
 	def getapiname(self):
 		return 'SheetMusic'

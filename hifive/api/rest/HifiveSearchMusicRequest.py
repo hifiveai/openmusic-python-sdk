@@ -20,8 +20,8 @@ class HifiveSearchMusicRequest(RestApi):
         self.durationFrom = None
         self.tagIds = None
         self.duration = None
-        self.Page = None
-        self.PageSize = None
+        self.page = None
+        self.pageSize = None
 
     def getapiname(self):
         return 'SearchMusic'
