@@ -417,7 +417,7 @@ def hifiveBaseVisualRequestTest(url, appkey, secret):
 
 
 def hifiveHotRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveHotRequest(url)
+    req = hifive.api.HifiveBaseHotRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.Duration = "183"
@@ -439,7 +439,7 @@ def hifiveBaseFavoriteRequestTest(url, appkey, secret, token):
     return resp;
 
 
-def hifiveBehaviorRequestTest(url, appkey, secret, token):
+def hifiveBaseReportRequestTest(url, appkey, secret, token):
     req = hifive.api.HifiveBaseReportRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret, token))
     req.clientId = "1223234343"
@@ -450,7 +450,7 @@ def hifiveBehaviorRequestTest(url, appkey, secret, token):
     return resp;
 
 
-def hifiveUserGetRequestTest(url, appkey, secret):
+def hifiveBaseLoginRequestTest(url, appkey, secret):
     req = hifive.api.HifiveBaseLoginRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
