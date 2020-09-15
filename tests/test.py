@@ -380,8 +380,8 @@ def hifiveSearchMusicRequestTest(url, appkey, secret):
     req.clientId = "1223234343"
     req.priceFromCent = "1"
     req.priceToCent = "100000"
-    req.Page = "1"
-    req.PageSize = "20"
+    req.page = "1"
+    req.pageSize = "20"
 
     resp = req.getResponse()
     return resp;
