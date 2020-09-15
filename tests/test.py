@@ -469,7 +469,7 @@ def hifiveBaseLoginRequestTest(url, appkey, secret):
 
 
 try:
-    resp = hifiveBaseReportRequestTest(url, appkey, secret,'9e4e3a940638f82532b5e888e7daf1d6')
+    resp = hifiveOrderRefundRequestTest(url, appkey, secret)
     print(resp)
 
 except Exception as e:

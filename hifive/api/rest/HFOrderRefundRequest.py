@@ -5,9 +5,10 @@ from hifive.api.base import RestApi
 
 
 class HFOrderRefundRequest(RestApi):
-    def __init__(self, domain=None, port=80):
+    def __init__(self, domain=None, port=80,method=None):
         domain = domain or 'hifive-gateway-test.hifiveai.com';
-        RestApi.__init__(self, domain, port)
+        method = method or 'POST';
+        RestApi.__init__(self, domain, port, method)
         self.clientId = None
         self.orderId = None
 
