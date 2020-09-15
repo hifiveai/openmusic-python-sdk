@@ -18,8 +18,7 @@ class HifiveSearchMusicRequest(RestApi):
         self.bpmFrom = None
         self.durationTo = None
         self.durationFrom = None
-        self.tagId = None
-        self.bpm = None
+        self.tagIds = None
         self.duration = None
         self.Page = None
         self.PageSize = None
