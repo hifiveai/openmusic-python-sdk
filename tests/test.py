@@ -5,7 +5,7 @@ Created on 2012-7-3
 @author: lihao
 '''
 import hifive.api
-from hifive.api import HifiveBitRateEnum, GenderEnum, EducationEnum
+from hifive.api import HFBitRateEnum, GenderEnum, EducationEnum
 from hifive.api.rest import AreaEnum, PeriodEnum
 
 appkey = '5216d02806d5464b943492838b7e4390'
@@ -16,29 +16,29 @@ port = 80
 
 
 def hifiveHQListenRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveHQListenRequest(url)
+    req = hifive.api.HFHQListenRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
 
 def hifiveTrafficDownloadRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficDownloadRequest(url)
+    req = hifive.api.HFTrafficDownloadRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
 
 def hifiveTrafficTagMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficTagMusicRequest(url)
+    req = hifive.api.HFTrafficTagMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.tagId = "5440"
@@ -46,7 +46,7 @@ def hifiveTrafficTagMusicRequestTest(url, appkey, secret):
     return resp;
 
 def hifiveOrderTagMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderTagMusicRequest(url)
+    req = hifive.api.HFOrderTagMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.tagId = "5440"
@@ -55,7 +55,7 @@ def hifiveOrderTagMusicRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficSearchMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficSearchMusicRequest(url)
+    req = hifive.api.HFTrafficSearchMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.keyword = "a"
@@ -64,7 +64,7 @@ def hifiveTrafficSearchMusicRequestTest(url, appkey, secret):
 
 
 def hifiveOrderSearchMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderSearchMusicRequest(url)
+    req = hifive.api.HFOrderSearchMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.keyword = "a"
@@ -73,34 +73,34 @@ def hifiveOrderSearchMusicRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficListenMixedRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficListenMixedRequest(url)
+    req = hifive.api.HFTrafficListenMixedRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
 
 def hifiveOrderListenMixedRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderListenMixedRequest(url)
+    req = hifive.api.HFOrderListenMixedRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
 
 def hifiveTrafficListenSliceRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficListenSliceRequest(url)
+    req = hifive.api.HFTrafficListenSliceRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
 
     req.isMixed = "TRUE"
     req.auditionBegin = "2"
@@ -110,12 +110,12 @@ def hifiveTrafficListenSliceRequestTest(url, appkey, secret):
 
 
 def hifiveOrderListenSliceRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderListenSliceRequest(url)
+    req = hifive.api.HFOrderListenSliceRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
 
     req.isMixed = "TRUE"
     req.auditionBegin = "2"
@@ -125,29 +125,29 @@ def hifiveOrderListenSliceRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficListenRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficListenRequest(url)
+    req = hifive.api.HFTrafficListenRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
 
 def hifiveOrderListenRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderListenRequest(url)
+    req = hifive.api.HFOrderListenRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
     return resp;
 
 
 def hifiveOrderSheetMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderSheetMusicRequest(url)
+    req = hifive.api.HFOrderSheetMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.sheetId = "1203"
@@ -157,7 +157,7 @@ def hifiveOrderSheetMusicRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficSheetMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficSheetMusicRequest(url)
+    req = hifive.api.HFTrafficSheetMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.sheetId = "1203"
@@ -167,7 +167,7 @@ def hifiveTrafficSheetMusicRequestTest(url, appkey, secret):
 
 
 def hifiveOrderGroupSheetRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderGroupSheetRequest(url)
+    req = hifive.api.HFOrderGroupSheetRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.groupId = "csa0t86qv24"
@@ -180,7 +180,7 @@ def hifiveOrderGroupSheetRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficGroupSheetRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficGroupSheetRequest(url)
+    req = hifive.api.HFTrafficGroupSheetRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.groupId = "csa0t86qv24"
@@ -193,7 +193,7 @@ def hifiveTrafficGroupSheetRequestTest(url, appkey, secret):
 
 
 def hifiveOrderTagSheetRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderTagSheetRequest(url)
+    req = hifive.api.HFOrderTagSheetRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.recoNum = "2"
@@ -202,7 +202,7 @@ def hifiveOrderTagSheetRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficTagSheetRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficTagSheetRequest(url)
+    req = hifive.api.HFTrafficTagSheetRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.recoNum = "2"
@@ -211,7 +211,7 @@ def hifiveTrafficTagSheetRequestTest(url, appkey, secret):
 
 
 def hifiveOrderGroupRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderGroupRequest(url)
+    req = hifive.api.HFOrderGroupRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     resp = req.getResponse()
@@ -219,7 +219,7 @@ def hifiveOrderGroupRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficGroupRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficGroupRequest(url)
+    req = hifive.api.HFTrafficGroupRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     resp = req.getResponse()
@@ -227,7 +227,7 @@ def hifiveTrafficGroupRequestTest(url, appkey, secret):
 
 
 def hifiveTrafficTagRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTrafficTagRequest(url)
+    req = hifive.api.HFTrafficTagRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     resp = req.getResponse()
@@ -235,7 +235,7 @@ def hifiveTrafficTagRequestTest(url, appkey, secret):
 
 
 def hifiveOrderTagRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderTagRequest(url)
+    req = hifive.api.HFOrderTagRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     resp = req.getResponse()
@@ -243,7 +243,7 @@ def hifiveOrderTagRequestTest(url, appkey, secret):
 
 
 def hifiveOrderRefundRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderRefundRequest(url)
+    req = hifive.api.HFOrderRefundRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.orderId = "1434556569145"
@@ -252,7 +252,7 @@ def hifiveOrderRefundRequestTest(url, appkey, secret):
 
 
 def hifiveOrderDetailRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderDetailRequest(url)
+    req = hifive.api.HFOrderDetailRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.orderId = "1434556569145"
@@ -261,7 +261,7 @@ def hifiveOrderDetailRequestTest(url, appkey, secret):
 
 
 def hifiveOrderPublishRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderPublishRequest(url)
+    req = hifive.api.HFOrderPublishRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.orderId = "1434556569145"
@@ -271,7 +271,7 @@ def hifiveOrderPublishRequestTest(url, appkey, secret):
 
 
 def hifiveOrderMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderMusicRequest(url)
+    req = hifive.api.HFOrderMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.orderId = "143455656914512"
@@ -281,20 +281,20 @@ def hifiveOrderMusicRequestTest(url, appkey, secret):
     req.totalFee = "1556"
     req.deadline = "50"
     req.language = "1"
-    req.audioFormat = HifiveBitRateEnum.AAC_320.value[0]
-    req.audioRate = HifiveBitRateEnum.AAC_320.value[1]
+    req.audioFormat = HFBitRateEnum.AAC_320.value[0]
+    req.audioRate = HFBitRateEnum.AAC_320.value[1]
 
     resp = req.getResponse()
     return resp;
 
 
 def hifiveHQListenSliceRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveHQListenSliceRequest(url)
+    req = hifive.api.HFHQListenSliceRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
-    req.audioFormat = HifiveBitRateEnum.MP3_128.value[0]
-    req.audioRate = HifiveBitRateEnum.MP3_128.value[1]
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
 
     req.isMixed = "TRUE"
     req.auditionBegin = "2"
@@ -304,7 +304,7 @@ def hifiveHQListenSliceRequestTest(url, appkey, secret):
 
 
 def hifiveChannelSheetRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveChannelSheetRequest(url)
+    req = hifive.api.HFChannelSheetRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.groupId = "csa0t86qv24"
@@ -319,7 +319,7 @@ def hifiveChannelSheetRequestTest(url, appkey, secret):
 
 
 def hifiveChannelRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveChannelRequest(url)
+    req = hifive.api.HFChannelRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
 
@@ -329,7 +329,7 @@ def hifiveChannelRequestTest(url, appkey, secret):
 
 
 def HifiveOrderAuthorizationRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveOrderAuthorizationRequest(url)
+    req = hifive.api.HFOrderAuthorizationRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.companyName = "嗨翻屋d1g"
@@ -344,7 +344,7 @@ def HifiveOrderAuthorizationRequestTest(url, appkey, secret):
 
 
 def hifiveSheetMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveSheetMusicRequest(url)
+    req = hifive.api.HFSheetMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.sheetId = "1203"
@@ -355,7 +355,7 @@ def hifiveSheetMusicRequestTest(url, appkey, secret):
 
 
 def hifiveTagSheetRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveTagSheetRequest(url)
+    req = hifive.api.HFTagSheetRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.recoNum = "10"
@@ -366,7 +366,7 @@ def hifiveTagSheetRequestTest(url, appkey, secret):
 
 
 def hifiveSheetTagRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveSheetTagRequest(url)
+    req = hifive.api.HFSheetTagRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
 
@@ -375,7 +375,7 @@ def hifiveSheetTagRequestTest(url, appkey, secret):
 
 
 def hifiveSearchMusicRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveSearchMusicRequest(url)
+    req = hifive.api.HFSearchMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.priceFromCent = "1"
@@ -388,7 +388,7 @@ def hifiveSearchMusicRequestTest(url, appkey, secret):
 
 
 def hifiveMusicConfigRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveMusicConfigRequest(url)
+    req = hifive.api.HFMusicConfigRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
 
@@ -397,7 +397,7 @@ def hifiveMusicConfigRequestTest(url, appkey, secret):
 
 
 def hifiveBaseWeatherRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveBaseWeatherRequest(url)
+    req = hifive.api.HFBaseWeatherRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.location = "30.779164,103.94547"
@@ -407,7 +407,7 @@ def hifiveBaseWeatherRequestTest(url, appkey, secret):
 
 
 def hifiveBaseVisualRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveBaseVisualRequest(url)
+    req = hifive.api.HFBaseVisualRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.location = "30.779164,103.94547"
@@ -417,7 +417,7 @@ def hifiveBaseVisualRequestTest(url, appkey, secret):
 
 
 def hifiveHotRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveBaseHotRequest(url)
+    req = hifive.api.HFBaseHotRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.duration = "183"
@@ -429,7 +429,7 @@ def hifiveHotRequestTest(url, appkey, secret):
 
 
 def hifiveBaseFavoriteRequestTest(url, appkey, secret, token):
-    req = hifive.api.HifiveBaseFavoriteRequest(url)
+    req = hifive.api.HFBaseFavoriteRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret, token))
     req.clientId = "1223234343"
     req.page = "1"
@@ -440,7 +440,7 @@ def hifiveBaseFavoriteRequestTest(url, appkey, secret, token):
 
 
 def hifiveBaseReportRequestTest(url, appkey, secret, token):
-    req = hifive.api.HifiveBaseReportRequest(url)
+    req = hifive.api.HFBaseReportRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret, token))
     req.clientId = "1223234343"
     req.action = "1009"
@@ -451,7 +451,7 @@ def hifiveBaseReportRequestTest(url, appkey, secret, token):
 
 
 def hifiveBaseLoginRequestTest(url, appkey, secret):
-    req = hifive.api.HifiveBaseLoginRequest(url)
+    req = hifive.api.HFBaseLoginRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.nickname = "黄达"
@@ -469,7 +469,7 @@ def hifiveBaseLoginRequestTest(url, appkey, secret):
 
 
 try:
-    resp = hifiveBaseLoginRequestTest(url, appkey, secret)
+    resp = hifiveBaseReportRequestTest(url, appkey, secret,'9e4e3a940638f82532b5e888e7daf1d6')
     print(resp)
 
 except Exception as e:
