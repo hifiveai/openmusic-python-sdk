@@ -8,10 +8,10 @@ import hifive.api
 from hifive.api import HFBitRateEnum, GenderEnum, EducationEnum
 from hifive.api.rest import AreaEnum, PeriodEnum
 
-appkey = '5216d02806d5464b943492838b7e4390'
-secret = '2d241e8f934d47d5'
+appkey = '300a44d050c942eebeae8765a878b0ee'
+secret = '0e31fe11b31247fca8'
 token = '5a9a8a7b7a6c34b6cabbbace77808b67'
-url = "https://hifive-openapi-qa.hifiveai.com"
+url = "https://hifive-gateway-prod.hifiveai.com"
 port = 80
 
 
@@ -47,6 +47,7 @@ def hifiveTrafficTagMusicRequestTest(url, appkey, secret):
     resp = req.getResponse()
     print(resp)
     return resp;
+
 
 def hifiveOrderTagMusicRequestTest(url, appkey, secret):
     req = hifive.api.HFOrderTagMusicRequest(url)
@@ -506,59 +507,79 @@ def hifiveBaseLoginRequestTest(url, appkey, secret):
     return resp;
 
 
+def HFTrialRequest(url, appkey, secret):
+    req = hifive.api.HFTrialRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw==";
+    req.musicId = "1D652150715";
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFKHQListenRequest(url, appkey, secret):
+    req = hifive.api.HFKHQListenRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw==";
+    req.musicId = "1D652150715";
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFKReportListenRequest(url, appkey, secret):
+    req = hifive.api.HFKReportListenRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw==";
+    req.musicId = "1D652150715";
+    req.duration = "2"
+    req.timestamp = "1618564947000"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFKTrialRequest(url, appkey, secret):
+    req = hifive.api.HFKTrialRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw==";
+    req.musicId = "1D652150715";
+    req.duration = "2"
+    req.timestamp = "1618564947000"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFUGCHQListenRequest(url, appkey, secret):
+    req = hifive.api.HFUGCHQListenRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw=="
+    req.musicId = "1D652150715"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFUGCTrialRequest(url, appkey, secret):
+    req = hifive.api.HFUGCTrialRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw=="
+    req.musicId = "1D652150715"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+
 try:
-   # resp = hifiveBaseLoginRequestTest(url, appkey, secret)
-    resp = hifiveBaseReportRequestTest(url, appkey, secret,'55c82cd073e8f87e0f298ad5719768d2')
-    resp = hifiveBaseFavoriteRequestTest(url, appkey, secret,'55c82cd073e8f87e0f298ad5719768d2')
-    resp = hifiveHotRequestTest(url, appkey, secret)
-    resp = hifiveBaseVisualRequestTest(url, appkey, secret)
-
-    resp = hifiveBaseWeatherRequestTest(url, appkey, secret)
-    resp = hifiveMusicConfigRequestTest(url, appkey, secret)
-    resp = hifiveSearchMusicRequestTest(url, appkey, secret)
-    resp = hifiveSheetTagRequestTest(url, appkey, secret)
-
-    resp = hifiveTagSheetRequestTest(url, appkey, secret)
-    resp = hifiveSheetMusicRequestTest(url, appkey, secret)
-    resp = HifiveOrderAuthorizationRequestTest(url, appkey, secret)
-    resp = hifiveChannelRequestTest(url, appkey, secret)
-
-    resp = hifiveChannelSheetRequestTest(url, appkey, secret)
-    resp = hifiveHQListenSliceRequestTest(url, appkey, secret)
-    resp = hifiveOrderMusicRequestTest(url, appkey, secret)
-    resp = hifiveOrderPublishRequestTest(url, appkey, secret)
-
-
-    resp = hifiveOrderDetailRequestTest(url, appkey, secret)
-    resp = hifiveOrderRefundRequestTest(url, appkey, secret)
-    resp = hifiveOrderTagRequestTest(url, appkey, secret)
-    resp = hifiveTrafficTagRequestTest(url, appkey, secret)
-
-    resp = hifiveTrafficGroupRequestTest(url, appkey, secret)
-    resp = hifiveOrderGroupRequestTest(url, appkey, secret)
-    resp = hifiveTrafficTagSheetRequestTest(url, appkey, secret)
-    resp = hifiveOrderTagSheetRequestTest(url, appkey, secret)
-
-    resp = hifiveTrafficGroupSheetRequestTest(url, appkey, secret)
-    resp = hifiveOrderGroupSheetRequestTest(url, appkey, secret)
-    resp = hifiveTrafficSheetMusicRequestTest(url, appkey, secret)
-    resp = hifiveOrderSheetMusicRequestTest(url, appkey, secret)
-
-    resp = hifiveOrderListenRequestTest(url, appkey, secret)
-    resp = hifiveTrafficListenRequestTest(url, appkey, secret)
-    resp = hifiveOrderListenSliceRequestTest(url, appkey, secret)
-    resp = hifiveTrafficListenSliceRequestTest(url, appkey, secret)
-
-
-    resp = hifiveOrderListenMixedRequestTest(url, appkey, secret)
-    resp = hifiveTrafficListenMixedRequestTest(url, appkey, secret)
-    resp = hifiveOrderSearchMusicRequestTest(url, appkey, secret)
-    resp = hifiveTrafficSearchMusicRequestTest(url, appkey, secret)
-
-    resp = hifiveOrderTagMusicRequestTest(url, appkey, secret)
-    resp = hifiveTrafficTagMusicRequestTest(url, appkey, secret)
-    resp = hifiveTrafficDownloadRequestTest(url, appkey, secret)
-    resp = hifiveHQListenRequestTest(url, appkey, secret)
+    resp = HFUGCTrialRequest(url, appkey, secret)
 
 except Exception as e:
     print(e)

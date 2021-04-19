@@ -45,6 +45,10 @@ from hifive.api.rest.SheetTypeEnum import SheetTypeEnum
 from hifive.api.rest.GenderEnum import GenderEnum
 from hifive.api.rest.EducationEnum import EducationEnum
 from hifive.api.rest.HFOrderTagMusicRequest import HFOrderTagMusicRequest
-
-
-
+from hifive.api.rest.HFTrialRequest import HFTrialRequest
+from hifive.api.rest.HFKHQListenRequest import HFKHQListenRequest
+from hifive.api.rest.HFKReportListenRequest import HFKReportListenRequest
+from hifive.api.rest.HFKTrialRequest import HFKTrialRequest
+from hifive.api.rest.HFUGCHQListenRequest import HFUGCHQListenRequest
+from hifive.api.rest.HFUGCTrialRequest import HFUGCTrialRequest
+from hifive.api.rest.HFUGCReportListenRequest import HFUGCReportListenRequest
