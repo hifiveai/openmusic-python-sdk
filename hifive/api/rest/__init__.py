@@ -6,6 +6,7 @@ from hifive.api.rest.HFOrderSearchMusicRequest import HFOrderSearchMusicRequest
 from hifive.api.rest.HFTrafficListenMixedRequest import HFTrafficListenMixedRequest
 from hifive.api.rest.HFOrderListenMixedRequest import HFOrderListenMixedRequest
 from hifive.api.rest.HFTrafficListenSliceRequest import HFTrafficListenSliceRequest
+from hifive.api.rest.HFTrafficReportListenRequest import HFTrafficReportListenRequest
 from hifive.api.rest.HFOrderListenSliceRequest import HFOrderListenSliceRequest
 from hifive.api.rest.HFTrafficListenRequest import HFTrafficListenRequest
 from hifive.api.rest.HFOrderListenRequest import HFOrderListenRequest
