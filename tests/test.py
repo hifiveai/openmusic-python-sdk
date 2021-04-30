@@ -576,10 +576,19 @@ def HFUGCTrialRequest(url, appkey, secret):
     print(resp)
     return resp;
 
+def HFUGCReportListenRequest(url, appkey, secret):
+    req = hifive.api.HFUGCReportListenRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw=="
+    req.musicId = "1D652150715"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
 
 
 try:
-    resp = HFUGCTrialRequest(url, appkey, secret)
+    resp = HFUGCReportListenRequest(url, appkey, secret)
 
 except Exception as e:
     print(e)
