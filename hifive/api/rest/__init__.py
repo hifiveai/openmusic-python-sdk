@@ -1,4 +1,4 @@
-from hifive.api.rest.HFHQListenRequest import HFHQListenRequest
+from hifive.api.rest.HFTrafficHQListenRequest import HFTrafficHQListenRequest
 from hifive.api.rest.HFTrafficDownloadRequest import HFTrafficDownloadRequest
 from hifive.api.rest.HFTrafficTagMusicRequest import HFTrafficTagMusicRequest
 from hifive.api.rest.HFTrafficSearchMusicRequest import HFTrafficSearchMusicRequest
