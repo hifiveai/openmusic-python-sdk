@@ -5,6 +5,7 @@ Created on 2012-7-3
 @author: lihao
 '''
 import hifive.api
+import datetime
 from hifive.api import HFBitRateEnum, GenderEnum, EducationEnum
 from hifive.api.rest import AreaEnum, PeriodEnum
 
@@ -16,7 +17,7 @@ port = 80
 
 
 def hifiveHQListenRequestTest(url, appkey, secret):
-    req = hifive.api.HFHQListenRequest(url)
+    req = hifive.api.HFTrafficHQListenRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
     req.musicId = "B7B810AABADF"
@@ -114,6 +115,20 @@ def hifiveTrafficListenSliceRequestTest(url, appkey, secret):
     req.isMixed = "TRUE"
     req.auditionBegin = "2"
     req.auditionEnd = "100"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def hifiveHFTrafficReportListenRequestTest(url, appkey, secret):
+    req = hifive.api.HFTrafficReportListenRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "1223234343"
+    req.musicId = "B7B810AABADF"
+    req.audioFormat = HFBitRateEnum.MP3_128.value[0]
+    req.audioRate = HFBitRateEnum.MP3_128.value[1]
+
+    req.timestamp = 13043534534534
+    req.duration = 130
     resp = req.getResponse()
     print(resp)
     return resp;
@@ -599,7 +614,11 @@ def HFAuthorizeMusicRequest(url, appkey, secret):
 
 
 try:
+<<<<<<< HEAD
     resp = HFAuthorizeMusicRequest(url, appkey, secret)
+=======
+    resp = hifiveHFTrafficReportListenRequestTest(url, appkey, secret)
+>>>>>>> 4811b342b62567c6d084c81836d5ac1c266a2470
 
 except Exception as e:
     print(e)

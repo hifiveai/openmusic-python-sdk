@@ -56,6 +56,9 @@ docs/_build/
 
 # PyCharm
 .idea/
+.idea/*.xml
+.idea/*.iml
+
 __MACOSX
 .venv
 .env
