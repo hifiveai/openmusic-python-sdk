@@ -52,3 +52,4 @@ from hifive.api.rest.HFKTrialRequest import HFKTrialRequest
 from hifive.api.rest.HFUGCHQListenRequest import HFUGCHQListenRequest
 from hifive.api.rest.HFUGCTrialRequest import HFUGCTrialRequest
 from hifive.api.rest.HFUGCReportListenRequest import HFUGCReportListenRequest
+from hifive.api.rest.HFAuthorizeMusicRequest import HFAuthorizeMusicRequest

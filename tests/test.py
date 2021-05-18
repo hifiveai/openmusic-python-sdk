@@ -8,10 +8,10 @@ import hifive.api
 from hifive.api import HFBitRateEnum, GenderEnum, EducationEnum
 from hifive.api.rest import AreaEnum, PeriodEnum
 
-appkey = '300a44d050c942eebeae8765a878b0ee'
-secret = '0e31fe11b31247fca8'
+appkey = 'ee45ca73bf1746428b2a942e017056df'
+secret = 'cd231e0c8d314074b2'
 token = '5a9a8a7b7a6c34b6cabbbace77808b67'
-url = "https://hifive-gateway-prod.hifiveai.com"
+url = "https://hifive-gateway-test.hifiveai.com"
 port = 80
 
 
@@ -586,9 +586,20 @@ def HFUGCReportListenRequest(url, appkey, secret):
     print(resp)
     return resp;
 
+def HFAuthorizeMusicRequest(url, appkey, secret):
+    req = hifive.api.HFAuthorizeMusicRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw=="
+    req.page = "1"
+    req.pageSize = "20"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
 
 try:
-    resp = HFUGCReportListenRequest(url, appkey, secret)
+    resp = HFAuthorizeMusicRequest(url, appkey, secret)
 
 except Exception as e:
     print(e)
