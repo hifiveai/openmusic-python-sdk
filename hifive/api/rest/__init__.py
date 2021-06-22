@@ -54,3 +54,12 @@ from hifive.api.rest.HFUGCHQListenRequest import HFUGCHQListenRequest
 from hifive.api.rest.HFUGCTrialRequest import HFUGCTrialRequest
 from hifive.api.rest.HFUGCReportListenRequest import HFUGCReportListenRequest
 from hifive.api.rest.HFAuthorizeMusicRequest import HFAuthorizeMusicRequest
+from hifive.api.rest.HFOpenMemberSheetRequest import HFOpenMemberSheetRequest
+from hifive.api.rest.HFMemberSheetMusicRequest import HFMemberSheetMusicRequest
+from hifive.api.rest.HFOpenMemberSheetMusicAddRequest import HFOpenMemberSheetMusicAddRequest
+from hifive.api.rest.HFRemoveMemberSheetMusicRequest import HFRemoveMemberSheetMusicRequest
+from hifive.api.rest.HFCreateMemberSheetRequest import HFCreateMemberSheetRequest
+from hifive.api.rest.HFClearSearchHistoryRequest import HFClearSearchHistoryRequest
+from hifive.api.rest.HFClearMemberSheetMusicRequest import HFClearMemberSheetMusicRequest
+from hifive.api.rest.HFDeleteMemberSheetRequest import HFDeleteMemberSheetRequest
+from hifive.api.rest.HFSearchHistoryRequest import HFSearchHistoryRequest

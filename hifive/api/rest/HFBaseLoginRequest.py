@@ -9,6 +9,8 @@ class HFBaseLoginRequest(RestApi):
         domain = domain or 'hifive-gateway-test.hifiveai.com';
         method = method or 'POST';
         RestApi.__init__(self, domain, port, method)
+        self.appId = None
+        self.timestamp = self.getTimestamp()
         self.clientId = None
         self.nickname = None
         self.gender = None

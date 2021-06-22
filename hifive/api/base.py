@@ -232,6 +232,7 @@ class RestApi(object):
         self.__port = port
         self.__httpmethod = method or "GET"
         self.__token = None
+        self.version = VERSION
         if (hifive.getDefaultAppInfo()):
             self.__app_key = hifive.getDefaultAppInfo().appkey
             self.__secret = hifive.getDefaultAppInfo().secret
@@ -249,6 +250,15 @@ class RestApi(object):
         self.__app_key = appinfo.appkey
         self.__secret = appinfo.secret
         self.__token = appinfo.token
+
+
+    def set_app_version(self, version):
+        # =======================================================================
+        # 设置请求的app信息
+        # @param appinfo: import top
+        #                 appinfo top.appinfo(appkey,secret)
+        # =======================================================================
+        self.version = version
 
     def getapiname(self):
         return ""
@@ -277,7 +287,7 @@ class RestApi(object):
         method = self.__httpmethod.upper()
         sys_headers = {
             X_HF_ACTION: self.getapiname(),
-            X_HF_VERSION: VERSION,
+            X_HF_VERSION: self.version,
             X_HF_APPID: self.__app_key,
             X_HF_NONCE: self.getNonce(),
             X_HF_CLIENT_ID: self.__dict__["clientId"],
