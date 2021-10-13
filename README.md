@@ -20,18 +20,17 @@ HIFIVE音乐播放器是一款Android、iOS两端的客户端系统，由成都�
 
 ## 关联仓库
 
-安卓端：https://github.com/hifiveai/openmusic-android-sdk
+php端: https://github.com/hifiveai/openmusic-php-sdk
 
-iOS端: https://github.com/hifiveai/openmusic-ios-sdk
-
-python端: https://github.com/hifiveai/openmusic-python-sdk
+ios端: https://github.com/hifiveai/openmusic-ios-sdk
 
 java端: https://github.com/hifiveai/openmusic-java-sdk
 
+安卓端：https://github.com/hifiveai/openmusic-android-sdk
+
 nodejs端: https://github.com/hifiveai/openmusic-nodejs-sdk
 
-php端: https://github.com/hifiveai/openmusic-php-sdk
-
+python端: https://github.com/hifiveai/openmusic-python-sdk
 
 ## 查看接口文档
 
