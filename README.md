@@ -46,7 +46,7 @@ python端: https://github.com/hifiveai/openmusic-python-sdk
 
 [SDK接入文档](../API.md)
 
-API文档可查看：https://open.hifiveai.com/api
+[API接入文档](https://open.hifiveai.com/api)
 
 ## 申请授权或技术支持
 
