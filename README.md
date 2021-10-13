@@ -8,15 +8,25 @@ HIFIVE音乐播放器是一款Android、iOS两端的客户端系统，由成都�
 
 ## 图片
 
-![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/4A843937-F639-4f1d-8A55-0A1734A72FD6.png)
+<div align=center>
+<img src="https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/4A843937-F639-4f1d-8A55-0A1734A72FD6.png"/>
+</div>
 
-![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/840036AB-6684-4d95-A663-05C5AD3787B0.png)
+<div align=center>
+<img src="https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/840036AB-6684-4d95-A663-05C5AD3787B0.png"/>
+</div>
 
-![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/F61F1D78-18C7-486f-80D8-49D2CB26140E.png)
+<div align=center>
+<img src="https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/F61F1D78-18C7-486f-80D8-49D2CB26140E.png"/>
+</div>
 
-![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/89DBEC8F-8C1E-446e-85DB-6B6B03C462A9.png)
+<div align=center>
+<img src="https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/89DBEC8F-8C1E-446e-85DB-6B6B03C462A9.png"/>
+</div>
 
-![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/74DF12E9-4CCE-45d6-AB17-09918847CF49.png)
+<div align=center>
+<img src="https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/74DF12E9-4CCE-45d6-AB17-09918847CF49.png"/>
+</div>
 
 ## 关联仓库
 
