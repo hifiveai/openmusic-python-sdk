@@ -50,4 +50,4 @@ API文档可查看：https://open.hifiveai.com/api
 
 ## 申请授权或技术支持
 
-添加微信客服openhifive或者注册登陆https://open.hifiveai.com
+添加微信客服openhifive或者[注册登陆](https://open.hifiveai.com)
