@@ -1,110 +1,35 @@
-tmcpy
+HIFIVE音乐播放器（含海量正版音乐的API）
 =======================
 
-淘宝平台消息服务客户端 for Python
+## 介绍
 
-Forked from https://github.com/baocaixiong/taobao-tmc-python , license MIT
+HIFIVE音乐播放器是一款Android、iOS两端的客户端系统，由成都嗨翻屋科技有限公司打造的播放器demo，开源无加密，支持二次开发。
+该demo包含了700万+海量正版音乐的API，包含了电台、歌单、搜索歌曲、热歌推荐、歌曲播放、歌词同步等功能。获取音乐API的权限可通过注册HIFIVE音乐开放平台申请授权。
 
-## 安装
+## 图片
 
-推荐使用 pip 进行安装：
+![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/4A843937-F639-4f1d-8A55-0A1734A72FD6.png)
 
-    pip install tmcpy
+![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/840036AB-6684-4d95-A663-05C5AD3787B0.png)
 
-升级版本：
+![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/F61F1D78-18C7-486f-80D8-49D2CB26140E.png)
 
-    pip install -U tmcpy
+![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/89DBEC8F-8C1E-446e-85DB-6B6B03C462A9.png)
 
-## 用法示例
+![Image text](https://hifive-open-sdk.s3.cn-northwest-1.amazonaws.com.cn/image/sdk/74DF12E9-4CCE-45d6-AB17-09918847CF49.png)
 
-```python
-import logging
+## 关联仓库
 
-from tmcpy import TmcClient
+安卓端：https://github.com/hifiveai/openmusic-android-sdk
 
-logging.basicConfig(level=logging.DEBUG)
+iOS端https://github.com/hifiveai/openmusic-ios-sdk
 
+## 查看接口文档
 
-tmc = TmcClient(
-    'ws://mc.api.tbsandbox.com/',
-    'appkey',
-    'appsecret',
-    'default',
-    query_message_interval=50
-)
+将之前的readme.md里面的接入说明单独放个文件， 点击[跳转](../API.md)
 
+API文档可查看：https://open.hifiveai.com/api
 
-def print1():
-    print 'on_open'
+## 申请授权或技术支持
 
-
-tmc.on("open", print1)
-try:
-    ioloop.IOLoop.instance().start()
-except KeyboardInterrupt:
-    pass
-finally:
-    tmc.close()
-```
-
-
-## 事件说明
-
-事件通过 ``TmcClient.on`` 方法监听，如：
-```python
-from tmcpy import TmcClient
-
-def on_open():
-    pass
-
-def on_message(message):
-    pass
-
-tmc = TmcClient('', '', '', '')
-tmc.on('open', on_open)
-tmc.on('message', on_message)
-```
-
-所有事件参数使用关键字参数传递，所以监听事件函数参数和事件参数名称应当一致。
-
-1. ``init``: 无参数
-2. ``handshake_success``: 参数 `token`
-3. ``confirm_message``: 参数 `message_id`
-4. ``open``: 无参数
-5. ``close``: 无参数
-6. ``reconnect``: 无参数
-7. ``parse_message_error``: 无参数
-8. ``received_message``: 无参数
-9. ``message``: 参数 `message`
-10. ``connection_lost``: 参数 `client`
-
-
-## 官方文档
-
-请查阅淘宝开放平台消息服务官方文档:
-
-http://open.taobao.com/doc/detail.htm?id=101663
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2015 messense
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+添加微信客服openhifive或者注册登陆https://open.hifiveai.com
