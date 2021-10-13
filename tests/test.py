@@ -613,13 +613,146 @@ def HFAuthorizeMusicDetailRequestTest(url, appkey, secret):
     return resp;
 
 
+
+def HFAuthorizeMusicRequest(url, appkey, secret):
+    req = hifive.api.HFAuthorizeMusicRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw=="
+    req.page = "1"
+    req.pageSize = "20"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def hifiveMemberBaseLoginRequestTest(url, appkey, secret):
+    req = hifive.api.HFBaseLoginRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.nickname = "黄达"
+    req.gender = GenderEnum.MAN.value
+    req.birthday = "202012121"
+    req.location = "30.779164,103.94547"
+    req.education = EducationEnum.MASTER.value
+    req.profession = "8"
+    req.isOrganization = "true"
+    req.favoriteSinger = "周杰伦"
+    req.favoriteGenre = "1"
+    req.appId="300a44d050c942eebeae8765a878b0ee"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def HFOpenMemberSheetRequestTest(url, appkey, secret):
+    req = hifive.api.HFOpenMemberSheetRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    req.page = "1"
+    req.pageSize = "20"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFMemberSheetMusicRequest(url, appkey, secret):
+    req = hifive.api.HFMemberSheetMusicRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.sheetId ="26768"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    req.page = "1"
+    req.pageSize = "20"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFOpenMemberSheetMusicAddRequest(url, appkey, secret):
+    req = hifive.api.HFOpenMemberSheetMusicAddRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.sheetId ="26768"
+    req.musicId ="C3AC0F17E56B"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def hfAuthorizeMusicRequest(url, appkey, secret):
+    req = hifive.api.HFAuthorizeMusicRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.page = "1"
+    req.pageSize = "20"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def HFCreateMemberSheetRequest(url, appkey, secret):
+    req = hifive.api.HFCreateMemberSheetRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.sheetName ="中国风2"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def HFClearSearchHistoryRequest(url, appkey, secret):
+    req = hifive.api.HFClearSearchHistoryRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def HFClearMemberSheetMusicRequest(url, appkey, secret):
+    req = hifive.api.HFClearMemberSheetMusicRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.sheetId ="26768"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFDeleteMemberSheetRequest(url, appkey, secret):
+    req = hifive.api.HFDeleteMemberSheetRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "hifive_test_123"
+    req.sheetId ="26768"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+
+def HFSearchHistoryRequest(url, appkey, secret):
+    req = hifive.api.HFSearchHistoryRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.set_app_version("V4.1.2")
+    req.clientId = "meiyang"
+    req.page = "1"
+    req.pageSize = "20"
+    req.accessToken ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiIxYzUyNGQ0MWI4ZjA0ZTdhOGIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2MjY1OTY5NjYsImlhdCI6MTYyMjEwNDE2Nn0.tPsDbXodR6iJBGBr0YnX5Yyp6jXwXYaAtpRLIiXH8sI"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
 try:
-
-
-    start = time.clock()
-    resp = hifiveHotRequestTest(url, appkey, secret)
-    elapsed = (time.clock() - start)
-    print("Time used:",elapsed)
-
+    resp = hifiveSearchMusicRequestTest(url, appkey, secret)
 except Exception as e:
     print(e)
