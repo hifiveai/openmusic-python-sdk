@@ -8,11 +8,12 @@ import hifive.api
 import datetime
 from hifive.api import HFBitRateEnum, GenderEnum, EducationEnum
 from hifive.api.rest import AreaEnum, PeriodEnum
+import time
 
-appkey = '300a44d050c942eebeae8765a878b0ee'
-secret = '0e31fe11b31247fca8'
+appkey = '3faeec81030444e98acf6af9ba32752a'
+secret = '59b1aff189b3474398'
 token = '5a9a8a7b7a6c34b6cabbbace77808b67'
-url = "https://hifive-gateway-prod.hifiveai.com"
+url = "https://gateway.open.hifiveai.com"
 port = 80
 
 
@@ -470,7 +471,7 @@ def hifiveHotRequestTest(url, appkey, secret):
     req = hifive.api.HFBaseHotRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-    req.duration = "183"
+    req.duration = "180"
     req.startTime = "1594639058"
     req.page = "1"
     req.pageSize = "20"
@@ -601,9 +602,24 @@ def HFUGCReportListenRequest(url, appkey, secret):
     print(resp)
     return resp;
 
+def HFAuthorizeMusicDetailRequestTest(url, appkey, secret):
+    req = hifive.api.HFAuthorizeMusicDetailRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "HOomxI+g0HvxGKofmUVsnw=="
+    req.musicIds = "B7B810B34957,B7B810B305AC"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
 
 try:
-    resp = hifiveHFTrafficReportListenRequestTest(url, appkey, secret)
+
+
+    start = time.clock()
+    resp = hifiveHotRequestTest(url, appkey, secret)
+    elapsed = (time.clock() - start)
+    print("Time used:",elapsed)
 
 except Exception as e:
     print(e)
