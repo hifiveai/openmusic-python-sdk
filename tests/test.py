@@ -486,6 +486,7 @@ def hifiveBaseFavoriteRequestTest(url, appkey, secret, token):
     req.clientId = "1223234343"
     req.page = "1"
     req.pageSize = "20"
+    req.set_app_version("V4.1.2")
 
     resp = req.getResponse()
     print(resp)
@@ -753,6 +754,6 @@ def HFSearchHistoryRequest(url, appkey, secret):
     return resp;
 
 try:
-    resp = hifiveSearchMusicRequestTest(url, appkey, secret)
+    resp = hifiveBaseFavoriteRequestTest(url, appkey, secret,"e4ff52828bd328f1776e757f97eda37e")
 except Exception as e:
     print(e)
