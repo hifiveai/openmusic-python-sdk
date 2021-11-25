@@ -64,3 +64,4 @@ from hifive.api.rest.HFClearSearchHistoryRequest import HFClearSearchHistoryRequ
 from hifive.api.rest.HFClearMemberSheetMusicRequest import HFClearMemberSheetMusicRequest
 from hifive.api.rest.HFDeleteMemberSheetRequest import HFDeleteMemberSheetRequest
 from hifive.api.rest.HFSearchHistoryRequest import HFSearchHistoryRequest
+from hifive.api.rest.HFBroadcastPlanRequest import HFBroadcastPlanRequest
