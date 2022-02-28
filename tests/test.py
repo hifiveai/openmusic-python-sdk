@@ -5,15 +5,14 @@ Created on 2012-7-3
 @author: lihao
 '''
 import hifive.api
-import datetime
 from hifive.api import HFBitRateEnum, GenderEnum, EducationEnum
 from hifive.api.rest import AreaEnum, PeriodEnum
-import time
 
+
+url = "https://gateway.open.hifiveai.com"
 appkey = '3faeec81030444e98acf6af9ba32752a'
 secret = '59b1aff189b3474398'
 token = '5a9a8a7b7a6c34b6cabbbace77808b67'
-url = "https://gateway.open.hifiveai.com"
 port = 80
 
 
@@ -425,8 +424,9 @@ def hifiveSearchMusicRequestTest(url, appkey, secret):
     req = hifive.api.HFSearchMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-    req.priceFromCent = "1"
-    req.priceToCent = "100000"
+    req.keyword = "愿得一人心"
+    # req.priceFromCent = "1"
+    # req.priceToCent = "100000"
     req.page = "1"
     req.pageSize = "20"
 
@@ -753,7 +753,29 @@ def HFSearchHistoryRequest(url, appkey, secret):
     print(resp)
     return resp;
 
+def hifiveBroadcastPlanRequestTest(url, appkey, secret):
+    req = hifive.api.HFBroadcastPlanRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "meiyang"
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def hifivSheetRequestTest(url, appkey, secret):
+    req = hifive.api.HFChannelSheetRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "1223234343"
+    req.recoNum = "10"
+    req.language = "1"
+
+    req.Page = "1"
+    req.PageSize = "10"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
 try:
-    resp = hifiveBaseFavoriteRequestTest(url, appkey, secret,"e4ff52828bd328f1776e757f97eda37e")
+    resp = hifivSheetRequestTest(url, appkey, secret)
 except Exception as e:
     print(e)

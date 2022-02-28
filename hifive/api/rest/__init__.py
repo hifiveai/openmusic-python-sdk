@@ -26,6 +26,7 @@ from hifive.api.rest.HFOrderPublishRequest import HFOrderPublishRequest
 from hifive.api.rest.HFOrderMusicRequest import HFOrderMusicRequest
 from hifive.api.rest.HFHQListenSliceRequest import HFHQListenSliceRequest
 from hifive.api.rest.HFChannelSheetRequest import HFChannelSheetRequest
+from hifive.api.rest.HFSheetRequest import HFSheetRequest
 from hifive.api.rest.HFChannelRequest import HFChannelRequest
 from hifive.api.rest.HFOrderAuthorizationRequest import HFOrderAuthorizationRequest
 from hifive.api.rest.HFSheetMusicRequest import HFSheetMusicRequest
