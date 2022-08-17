@@ -11,6 +11,8 @@ class HFSheetRequest(RestApi):
 		self.language = None
 		self.page = None
 		self.pageSize = None
+		self.tagId = None
+		self.tagFilter = None
 
 	def getapiname(self):
 		return 'Sheet'

@@ -12,7 +12,8 @@ from hifive.api.rest import AreaEnum, PeriodEnum
 url = "https://gateway.open.hifiveai.com"
 appkey = '3faeec81030444e98acf6af9ba32752a'
 secret = '59b1aff189b3474398'
-token = '5a9a8a7b7a6c34b6cabbbace77808b67'
+
+token = '59b1aff189b3474398'
 port = 80
 
 
@@ -20,7 +21,7 @@ def hifiveHQListenRequestTest(url, appkey, secret):
     req = hifive.api.HFTrafficHQListenRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-    req.musicId = "B7B810AABADF"
+    req.musicId = "2F0891E31B"
     req.audioFormat = HFBitRateEnum.MP3_128.value[0]
     req.audioRate = HFBitRateEnum.MP3_128.value[1]
     resp = req.getResponse()
@@ -294,7 +295,7 @@ def hifiveOrderDetailRequestTest(url, appkey, secret):
     req = hifive.api.HFOrderDetailRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-    req.orderId = "1434556569145"
+    req.orderId = "202208116"
     resp = req.getResponse()
     print(resp)
     return resp;
@@ -414,7 +415,6 @@ def hifiveSheetTagRequestTest(url, appkey, secret):
     req = hifive.api.HFSheetTagRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-
     resp = req.getResponse()
     print(resp)
     return resp;
@@ -424,11 +424,12 @@ def hifiveSearchMusicRequestTest(url, appkey, secret):
     req = hifive.api.HFSearchMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "1223234343"
-    req.keyword = "愿得一人心"
+    req.keyword = "Down Glissando"
     # req.priceFromCent = "1"
     # req.priceToCent = "100000"
     req.page = "1"
     req.pageSize = "20"
+    req.levels = "MUSIC_EFFECT"
 
     resp = req.getResponse()
     print(resp)
@@ -475,6 +476,7 @@ def hifiveHotRequestTest(url, appkey, secret):
     req.startTime = "1594639058"
     req.page = "1"
     req.pageSize = "20"
+    req.levels = "MUSIC_EFFECT"
     resp = req.getResponse()
     print(resp)
     return resp;
@@ -619,8 +621,9 @@ def HFAuthorizeMusicRequest(url, appkey, secret):
     req = hifive.api.HFAuthorizeMusicRequest(url)
     req.set_app_info(hifive.appinfo(appkey, secret))
     req.clientId = "HOomxI+g0HvxGKofmUVsnw=="
-    req.page = "1"
-    req.pageSize = "20"
+    req.Page = str(1)
+    req.PageSize = str(100)
+    req.set_app_version("V4.1.2")
 
     resp = req.getResponse()
     print(resp)
@@ -775,7 +778,58 @@ def hifivSheetRequestTest(url, appkey, secret):
     print(resp)
     return resp;
 
+
+def hifivAuthorizeMusicRequestTest(url, appkey, secret):
+    req = hifive.api.HFAuthorizeMusicRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "1223234343"
+
+    req.Page = "1"
+    req.PageSize = "10"
+    req.set_app_version("V4.1.2")
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def hifivHFSheetRequest(url, appkey, secret):
+    req = hifive.api.HFSheetRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "hf2y7jk19a56qetq05asfdfasdf"
+    req.Page = "1"
+    req.PageSize = "10"
+    req.RecoNum = "2"
+    # req.language = "0"
+    req.set_app_version("V4.1.2")
+    req.tagId = "10162,10136"
+    req.tagFilter = "1"
+
+    resp = req.getResponse()
+    print(resp)
+    return resp;
+
+def memberMusicInSheetRequest(url, appkey, secret):
+    req = hifive.api.HFMemberMusicInSheetRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "1234567"
+    req.sheetId = "11577"
+    req.musicId = "AABBBCCC"
+    req.accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzZWNyZXRLZXkiOiI0MmRkZTZkYmNiOWQ0NTRmYTIiLCJpc3MiOiJoaWZpdmUiLCJleHAiOjE2NjUxMjQ3NzQsImlhdCI6MTY2MDYzMTk3NH0.0cOMLJXpzx7UAXlhYIzVaHoCyllerllFljAoueOf0cU"
+    resp = req.getResponse()
+    print(resp)
+    return resp
+
+def sheetDetailRequestRequest(url, appkey, secret):
+    req = hifive.api.HFSheetDetailRequest(url)
+    req.set_app_info(hifive.appinfo(appkey, secret))
+    req.clientId = "1234567"
+    req.sheetId = "3818"
+    resp = req.getResponse()
+    print(resp)
+    return resp
+
 try:
-    resp = hifivSheetRequestTest(url, appkey, secret)
+    resp = hifivHFSheetRequest(url, appkey, secret)
+    print(resp)
 except Exception as e:
     print(e)

@@ -22,6 +22,7 @@ class HFSearchMusicRequest(RestApi):
         self.duration = None
         self.page = None
         self.pageSize = None
+        self.levels = None
 
     def getapiname(self):
         return 'SearchMusic'

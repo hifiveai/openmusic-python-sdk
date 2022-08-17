@@ -66,3 +66,5 @@ from hifive.api.rest.HFClearMemberSheetMusicRequest import HFClearMemberSheetMus
 from hifive.api.rest.HFDeleteMemberSheetRequest import HFDeleteMemberSheetRequest
 from hifive.api.rest.HFSearchHistoryRequest import HFSearchHistoryRequest
 from hifive.api.rest.HFBroadcastPlanRequest import HFBroadcastPlanRequest
+from hifive.api.rest.HFMemberMusicInSheetRequest import HFMemberMusicInSheetRequest
+from hifive.api.rest.HFSheetDetailRequest import HFSheetDetailRequest

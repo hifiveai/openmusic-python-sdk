@@ -14,7 +14,7 @@ class HFBaseHotRequest(RestApi):
         self.duration = None
         self.page = None
         self.pageSize = None
-
+        self.levels = None
 
 
 
